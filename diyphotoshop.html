@@ -54,6 +54,41 @@
 
 <pre>
 
+var img;
+var img2;
+var img3;
+var img4;
+var img5;
+var img6;
+var img7;
+var img8;
+var img9;
+var initials ='cls'; // my initials
+var choice = '1'; // starting choice
+var screenbg = 250; // off white background
+var lastscreenshot=61; // last screenshot never taken
+
+function preload() {
+// preload() runs once, it may make you wait
+//  img = loadImage('star.png');  // star.png needs to be next to this .js file
+// you can link to an image on your github account
+  img = loadImage('https://casey-schmid.github.io/images/star.png');
+  img2 = loadImage('https://casey-schmid.github.io/images/twohearts.png');
+  img3 = loadImage('https://casey-schmid.github.io/images/diamond.png');
+  img4 = loadImage('https://casey-schmid.github.io/images/cherryblossom.png');
+  img5 = loadImage('https://casey-schmid.github.io/images/palette.png');
+  img6 = loadImage('https://casey-schmid.github.io/images/snowflake.png');
+  img7 = loadImage('https://casey-schmid.github.io/images/butterfly.png');
+  img8 = loadImage('https://casey-schmid.github.io/images/dolphin.png');
+  img9 = loadImage('https://casey-schmid.github.io/images/rainbow.png');
+}
+
+function setup() {
+createCanvas(600, 600);  // canvas size
+background(screenbg);   // use our background screen color
+
+}
+
 function draw() {
   if (keyIsPressed) {
     choice = key; // set choice to the key that was pressed
