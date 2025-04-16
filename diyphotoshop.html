@@ -177,7 +177,7 @@ function saveme(){
   filename=initials+day() + hour() + minute() +second();
   if (second()!=lastscreenshot) { // don't take a screenshot if you just took one
     saveCanvas(filename, 'jpg');
-    key="";
+    key="j";
   }
   lastscreenshot=second(); // set this to the current second so no more than one per second
   
