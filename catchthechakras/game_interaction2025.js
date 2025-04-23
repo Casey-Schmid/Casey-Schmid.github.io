@@ -1,27 +1,17 @@
-// Catch the Seven Chakras!
+// Catch the Seven Chakras
 
 var ballx = 300;
 var bally = 300;
 var ballSize = 60;
 var score = 0;
-var img1, img2, img3, img4, img5, img6, img7;
-var gameState = "start";
+var gameState = "L1";
 
 function setup() {
   createCanvas(600, 600);
   textAlign(CENTER);
-  textSize (25);
+  textSize (20);
 } // end of set up
 
-function preload() {
-  img1 = loadImage('https://casey-schmid.github.io/images/root.png');
-  img2 = loadImage('https://casey-schmid.github.io/images/sacral.png');
-  img3 = loadImage('https://casey-schmid.github.io/images/solarplexus.png');
-  img4 = loadImage('https://casey-schmid.github.io/images/heart.png');
-  img5 = loadImage('https://casey-schmid.github.io/images/throat.png');
-  img6 = loadImage('https://casey-schmid.github.io/images/thirdeye.png');
-  img7 = loadImage('https://casey-schmid.github.io/images/crown.png');
-}
 
 function draw() {
   if(gameState == "L1"){
@@ -45,9 +35,6 @@ function draw() {
   if(gameState == "L7"){
     levelSeven();
   }
-  if(gameState == "win"){
-    win();
-  }
 
 text(("Score: " + score), width/2, 60);
 } // end of draw
@@ -64,9 +51,10 @@ function levelOne(){
   if(score>=7){
     gameState = "L2";
   }
-  nline(ballx+20, bally+20, mouseX, mouseY);
-  image(img1, ballx, bally);
-  //line(ballx, bally, mouseX, mouseY);
+  
+  fill(255, 0, 0);
+  ellipse(ballx, bally, ballSize, ballSize);
+  line(ballx, bally, mouseX, mouseY);
   
 } // end of level 1
   
@@ -84,9 +72,9 @@ function levelTwo(){
     gameState = "L3";
   }
   
-  nline(ballx+20, bally+20, mouseX, mouseY);
-  image(img2, ballx, bally);
-  //line(ballx, bally, mouseX, mouseY);
+  line(ballx, bally, mouseX, mouseY);
+  fill(255, 117, 26);
+  ellipse(ballx, bally, ballSize, ballSize);
   
 } // end of level 2
 
@@ -104,9 +92,9 @@ function levelThree(){
     gameState = "L4";
   }
   
-  nline(ballx+20, bally+20, mouseX, mouseY);
-  image(img3, ballx, bally);
   //line(ballx, bally, mouseX, mouseY);
+  fill(255, 255, 0);
+  ellipse(ballx, bally, ballSize, ballSize);
   
 } // end of level 3
 
@@ -124,9 +112,9 @@ function levelFour(){
     gameState = "L5";
   }
   
-  nline(ballx+20, bally+20, mouseX, mouseY);
-  image(img4, ballx, bally);
   //line(ballx, bally, mouseX, mouseY);
+  fill(0, 230, 0);
+  ellipse(ballx, bally, ballSize, ballSize);
   
 } // end of level 4
 
@@ -144,9 +132,9 @@ function levelFive(){
     gameState = "L6";
   }
   
-  nline(ballx+20, bally+20, mouseX, mouseY);
-  image(img5, ballx, bally);
   //line(ballx, bally, mouseX, mouseY);
+  fill(0, 204, 255);
+  ellipse(ballx, bally, ballSize, ballSize);
   
 } // end of level 5
 
@@ -164,9 +152,9 @@ function levelSix(){
     gameState = "L7";
   }
   
-  nline(ballx+20, bally+20, mouseX, mouseY);
-  image(img6, ballx, bally);
   //line(ballx, bally, mouseX, mouseY);
+  fill(0, 0, 255);
+  ellipse(ballx, bally, ballSize, ballSize);
   
 } // end of level 6
 
@@ -181,11 +169,11 @@ function levelSeven(){
   }
   
   if(score>=70){
-    gameState = "win";
+    gameState = "L1";
   }
   
-  nline(ballx+20, bally+20, mouseX, mouseY);
-  image(img7, ballx, bally);
   //line(ballx, bally, mouseX, mouseY);
+  fill(153, 51, 255);
+  ellipse(ballx, bally, ballSize, ballSize);
   
 } // end of level 7
